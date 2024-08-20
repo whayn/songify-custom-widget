@@ -1,0 +1,43 @@
+{
+  "name": "songify-custom-widget",
+  "version": "1.0.0",
+  "description": "Songify Custom Widget",
+  "main": "dist/server.js",
+  "scripts": {
+    "build-client": "cd client && npm run build",
+    "build-server": "tsc",
+    "copy-client-build": "xcopy /s /e /y client\\build dist\\client\\build",
+    "build": "npm run build-client && npm run build-server && npm run copy-client-build",
+    "start": "node dist/server.js",
+    "dev-client": "cd client && npm start",
+    "dev-server": "ts-node-dev --respawn src/server.ts",
+    "dev": "concurrently \"npm run dev-client\" \"npm run dev-server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "express": "^4.19.2",
+    "jimp": "^0.22.12",
+    "js-yaml": "^4.1.0",
+    "node-hide-console-window": "^2.2.0",
+    "open": "^10.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "systray2": "^2.1.4",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.4.1",
+    "@types/node-notifier": "^8.0.5",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}

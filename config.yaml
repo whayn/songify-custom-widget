@@ -1,0 +1,11 @@
+server:
+  port: 5000
+  externalApiUrl: "http://localhost:1025/"
+
+style:
+  padding: 5px # Padding around the whole widget
+  borderSize: 1px # Border size of the widget
+  titleFontSize: 23px # Font size of the title
+  artistFontSize: 18px # Font size of the artist
+  width: 280px # Width of the content area
+  refreshInterval: 3 # Due to the way we query settings, this has no effect yet
