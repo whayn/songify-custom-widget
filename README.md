@@ -46,6 +46,15 @@ To run the application in development mode:
 
 ---
 
+## Contributing
+
+Pull requests are welcome! If you have any improvements, bug fixes, or new features to add, feel free to submit a pull request. Please ensure that your contributions are well-documented and tested.
+
+Thank you for contributing to the project!
+
+---
+
+
 ### Acknowledgments
 
 - Logo and Graphics: The logo is a slightly edited version of the Songify logo, so it is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
