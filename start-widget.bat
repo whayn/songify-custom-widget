@@ -11,7 +11,6 @@ IF ERRORLEVEL 1 (
 )
 
 echo Node.js is installed.
-pause
 
 :: Check if npm is installed
 @REM npm -v >nul 2>&1
@@ -33,7 +32,6 @@ IF ERRORLEVEL 1 (
     exit /b
 )
 echo Dependencies installed.
-pause
 
 :: Build the client
 echo Building the client...
@@ -47,6 +45,17 @@ IF ERRORLEVEL 1 (
 cd ..
 echo Client built.
 
+:: Build the server
+echo Building the server...
+call npx tsc
+IF ERRORLEVEL 1 (
+    echo Failed to build the server.
+    pause
+    exit /b
+)
+cd ..
+echo Server built.
+
 :: Run the server
 echo Starting the server...
 node dist/server.js
@@ -55,6 +64,6 @@ IF ERRORLEVEL 1 (
     pause
     exit /b
 )
-echo Server started.
+echo Server started. You can now close this window. To close the server, right click on the system tray icon and select "Exit".
 
 ENDLOCAL
