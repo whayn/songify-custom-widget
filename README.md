@@ -2,6 +2,9 @@
 
 This project is a custom widget that integrates with the [Songify](https://github.com/songify-rocks/Songify) web server. The widget displays current song information and can be embedded into OBS or other broadcasting software as a browser source.
 
+> [!WARNING]  
+>  This project is **Windows only**
+
 ## Requirements
 
 - **Songify**: Ensure that Songify is installed and its integrated web server is turned on and properly configured. For more information on configuring the Songify web server, see the [Settings Window - Web Server](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server) section of the Songify wiki.
@@ -54,11 +57,10 @@ Thank you for contributing to the project!
 
 ---
 
-
 ### Acknowledgments
 
 - Logo and Graphics: The logo is a slightly edited version of the Songify logo, so it is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## License
 
- **Songify Custom Widget** by **Whayn** is licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+**Songify Custom Widget** by **Whayn** is licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
