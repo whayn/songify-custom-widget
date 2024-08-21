@@ -49,6 +49,11 @@ To run the application in development mode:
 
 ---
 
+## TODO
+
+- [ ] Make the server run headless
+- [ ] Add refresh timings configuration
+
 ## Contributing
 
 Pull requests are welcome! If you have any improvements, bug fixes, or new features to add, feel free to submit a pull request!
