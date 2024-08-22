@@ -1,7 +1,11 @@
 import { createLogger, format, transports } from "winston";
 import path from "path";
+import fs from "fs";
 
 const logFilePath = path.join(__dirname, "../logs/server-logs.log");
+
+// Truncate the log file on startup
+fs.truncateSync(logFilePath, 0);
 
 const logger = createLogger({
 	level: "info",
