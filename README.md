@@ -27,7 +27,7 @@ To run the application in production mode, follow these steps:
 
    For detailed instructions, please refer to the [Songify Web Server Settings](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server).
 
-3. Double-click on the `start-app.bat` file.
+3. Double-click on the `start-widget.bat` file.
 4. If Node.js is not installed, the batch file will prompt you to install it. Follow the instructions to install Node.js from [nodejs.org](https://nodejs.org/).
 5. After starting the application, a tray icon will appear in the system tray.
 6. Right-click the tray icon and select **Open Widget** to open the widget in your default browser.
