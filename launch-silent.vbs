@@ -10,9 +10,6 @@ scriptPath = fso.GetParentFolderName(WScript.ScriptFullName)
 ' Construct the full path to the dist/server.js file
 distPath = fso.BuildPath(scriptPath, "dist\server.js")
 
-' Output the value of distPath
-WScript.Echo "distPath: " & distPath
-
 ' Run the Node.js server
 objShell.Run """node"" """ & distPath & """", 0
 

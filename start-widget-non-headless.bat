@@ -70,7 +70,7 @@ echo Server built.
 
 :: Run the server
 echo Starting the server...
-start "" /B wscript.exe launch-silent.vbs
+node dist/server.js
 IF ERRORLEVEL 1 (
     echo Failed to start the server.
     pause
