@@ -6,6 +6,7 @@ import { Config } from "./typings";
 import axios from "axios";
 import SysTray from "systray2";
 import os from "os";
+import logger from "./logger"; // Import the logger
 
 const open = async (url: string) => {
 	const { default: openModule } = await import("open");
@@ -46,6 +47,7 @@ app.get("/api/data", async (req, res) => {
 		const response = await axios.get(config.server.externalApiUrl);
 		res.json({ ...response.data, style: config.style });
 	} catch (error) {
+		logger.error("Failed to fetch data from external API", error); // Log the error
 		res.status(500).json({
 			error:
 				"Songify is not started, or the web-server is not configured properly",
@@ -61,7 +63,7 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-	console.log(`Server is running on http://localhost:${PORT}`);
+	logger.info(`Server is running on http://localhost:${PORT}`); // Log server start
 });
 
 // Create tray icon functionality using systray2
@@ -112,10 +114,10 @@ function createTrayIcon() {
 	systray
 		.ready()
 		.then(() => {
-			console.log("systray started!");
+			logger.info("systray started!"); // Log systray start
 		})
 		.catch((err: any) => {
-			console.log("systray failed to start: " + err.message);
+			logger.error("systray failed to start: " + err.message); // Log systray error
 		});
 }
 
