@@ -53,7 +53,6 @@ IF ERRORLEVEL 1 (
     pause
     exit /b
 )
-cd ..
 echo Server built.
 
 :: Run the server
