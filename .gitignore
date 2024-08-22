@@ -28,3 +28,4 @@ client/build
 client/node_modules
 client/.pnp
 client/package-lock.json
+logs
