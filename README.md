@@ -56,7 +56,7 @@ To run the application in development mode:
 
 ## TODO
 
-- [ ] Make the server run headless
+- [x] Make the server run headless
 - [ ] Add refresh timings configuration
 
 ## Contributing
