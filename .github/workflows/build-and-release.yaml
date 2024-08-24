@@ -54,19 +54,22 @@ jobs:
       - name: Set GITHUB_REF_NAME
         run: echo "GITHUB_REF_NAME=$(echo ${GITHUB_REF} | sed 's/refs\/tags\///')" >> $GITHUB_ENV
 
+      - name: Debug GITHUB_REF_NAME
+        run: echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
+
       - name: Create zip file for release
         run: |
-          zip -r songify-widget-${GITHUB_REF_NAME}.zip . -x "*.git*"
+          zip -r songify-widget-${{ env.GITHUB_REF_NAME }}.zip . -x "*.git*"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: songify-widget-${GITHUB_REF_NAME}
-          path: songify-widget-${GITHUB_REF_NAME}.zip
+          name: songify-widget-${{ env.GITHUB_REF_NAME }}
+          path: songify-widget-${{ env.GITHUB_REF_NAME }}.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: songify-widget-${GITHUB_REF_NAME}.zip
+          files: songify-widget-${{ env.GITHUB_REF_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
