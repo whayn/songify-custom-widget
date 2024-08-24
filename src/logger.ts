@@ -2,7 +2,18 @@ import { createLogger, format, transports } from "winston";
 import path from "path";
 import fs from "fs";
 
-const logFilePath = path.join(__dirname, "../logs/server-logs.log");
+const logDir = path.join(__dirname, "../logs");
+const logFilePath = path.join(logDir, "server-logs.log");
+
+// Ensure the logs directory exists
+if (!fs.existsSync(logDir)) {
+	fs.mkdirSync(logDir, { recursive: true });
+}
+
+// Ensure the log file exists before truncating
+if (!fs.existsSync(logFilePath)) {
+	fs.writeFileSync(logFilePath, "");
+}
 
 // Truncate the log file on startup
 fs.truncateSync(logFilePath, 0);
