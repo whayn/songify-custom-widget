@@ -4,7 +4,12 @@ on:
   push:
     tags:
       - "v*.*.*" # Triggers on version tags like v1.0.0
-
+permissions:
+  contents: write
+  issues: write
+  packages: write
+  pull-requests: write
+  statuses: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,4 +62,4 @@ jobs:
         with:
           files: songify-widget-release.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
