@@ -36,6 +36,7 @@ echo Dependencies installed.
 :: Build the client
 echo Building the client...
 cd client || exit /b
+call npm i
 call npm run build
 IF ERRORLEVEL 1 (
     echo Failed to build the client.

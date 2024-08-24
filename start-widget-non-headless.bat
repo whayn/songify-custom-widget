@@ -36,6 +36,7 @@ echo Dependencies installed.
 :: Build the client
 echo Building the client...
 cd client || exit /b
+call npm i
 call npm run build
 IF ERRORLEVEL 1 (
     echo Failed to build the client.
@@ -76,7 +77,7 @@ IF ERRORLEVEL 1 (
     pause
     exit /b
 )
-echo Server started. You can now close this window. To close the server, right click on the system tray icon and select "Exit".
+@REM echo Server started. You can now close this window. To close the server, right click on the system tray icon and select "Exit".
 pause
 
 ENDLOCAL
