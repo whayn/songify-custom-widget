@@ -58,12 +58,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: songify-widget-release
-          path: songify-widget-release.zip
+          name: songify-widget-${GITHUB_REF_NAME}
+          path: songify-widget-${GITHUB_REF_NAME}.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: songify-widget-release.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
