@@ -87,6 +87,7 @@ function createTrayIcon() {
 		enabled: true,
 		click: () => {
 			systray.kill(false);
+			process.exit(0);
 		},
 	};
 
