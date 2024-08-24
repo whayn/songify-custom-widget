@@ -4,6 +4,11 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@babel/plugin-transform-class-properties": "^7.25.4",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.7",
+    "@babel/plugin-transform-numeric-separator": "^7.24.7",
+    "@babel/plugin-transform-optional-chaining": "^7.24.8",
+    "@babel/plugin-transform-private-methods": "^7.25.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
