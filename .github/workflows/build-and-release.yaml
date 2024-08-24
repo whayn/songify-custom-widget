@@ -51,6 +51,9 @@ jobs:
           rm -rf client/package.json
           rm -rf README.md
 
+      - name: Set GITHUB_REF_NAME
+        run: echo "GITHUB_REF_NAME=$(echo ${GITHUB_REF} | sed 's/refs\/tags\///')" >> $GITHUB_ENV
+
       - name: Create zip file for release
         run: |
           zip -r songify-widget-${GITHUB_REF_NAME}.zip . -x "*.git*"
