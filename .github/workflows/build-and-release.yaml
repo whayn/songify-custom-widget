@@ -35,7 +35,7 @@ jobs:
       - name: Build server
         run: npx tsc
 
-      - name: Remove source files
+      - name: Remove unnecessary files
         run: |
           rm -rf src
           rm -rf client/src
@@ -46,10 +46,14 @@ jobs:
           rm -rf tsconfig.json
           rm -rf start-widget-non-headless.old.bat
           rm -rf start-widget.old.bat
+          rm -rf client/node_modules
+          rm -rf client/package-lock.json
+          rm -rf client/package.json
+          rm -rf README.md
 
       - name: Create zip file for release
         run: |
-          zip -r songify-widget-release.zip . -x "*.git*"
+          zip -r songify-widget-${GITHUB_REF_NAME}.zip . -x "*.git*"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
