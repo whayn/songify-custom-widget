@@ -1,4 +1,3 @@
-import { text } from "express";
 import React, { useEffect, useState } from "react";
 
 interface Album {
