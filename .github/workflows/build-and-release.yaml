@@ -1,0 +1,58 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # Triggers on version tags like v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "21" # Specify the Node.js version you want to use
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build client
+        run: |
+          cd client
+          npm install
+          npm run build
+
+      - name: Build server
+        run: npx tsc
+
+      - name: Remove source files
+        run: |
+          rm -rf src
+          rm -rf client/src
+          rm -rf client/public
+          rm -rf client/tailwind.config.js
+          rm -rf client/postcss.config.js
+          rm -rf client/tsconfig.json
+          rm -rf tsconfig.json
+
+      - name: Create zip file for release
+        run: |
+          zip -r songify-widget-release.zip . -x "*.git*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: songify-widget-release
+          path: songify-widget-release.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: songify-widget-release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
