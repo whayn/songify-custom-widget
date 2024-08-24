@@ -39,6 +39,8 @@ jobs:
           rm -rf client/postcss.config.js
           rm -rf client/tsconfig.json
           rm -rf tsconfig.json
+          rm -rf start-widget-non-headless.old.bat
+          rm -rf start-widget.old.bat
 
       - name: Create zip file for release
         run: |
