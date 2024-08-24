@@ -18,20 +18,25 @@ This project is a custom widget that integrates with the [Songify](https://githu
 
    For detailed instructions, please refer to the [Songify Web Server Settings](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server).
 
-## Running for production
+## Installing and running
 
-To run the application in production mode, follow these steps:
+To run the application, follow these steps:
 
 1. Open the Songify application.
 2. Go to the **Settings Window** and enable the **Web Server**.
 
    For detailed instructions, please refer to the [Songify Web Server Settings](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server).
 
-3. Double-click on the `start-widget.bat` file.
-4. If Node.js is not installed, the batch file will prompt you to install it. Follow the instructions to install Node.js from [nodejs.org](https://nodejs.org/).
-5. After starting the application, a tray icon will appear in the system tray.
-6. Right-click the tray icon and select **Open Widget** to open the widget in your default browser.
-7. Add the widget URL to OBS or another broadcasting software as a browser source to display the widget in your stream.
+3. Grab the latest release of the widget from the [Releases](https://github.com/whayn/songify-custom-widget/releases) (select `songify-widget-v*.*.*.zip`).
+4. Extract the contents of the ZIP file to a folder on your computer (somewhere that you can remember, such as your Document folder).
+5. Double-click on the `start-widget.bat` file (or `start-widget-non-headless.bat`).
+6. If Node.js is not installed, the batch file will prompt you to install it. Follow the instructions to install Node.js from [nodejs.org](https://nodejs.org/).
+7. After starting the application, a tray icon will appear in the system tray.
+8. Right-click the tray icon and select **Open Widget** to open the widget in your default browser.
+9. Add the widget URL to OBS or another broadcasting software as a browser source to display the widget in your stream.
+
+> [!NOTE]  
+>  To close the widget, right-click the tray icon and select **Exit**.
 
 ## Running for Development
 
