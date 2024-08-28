@@ -9,15 +9,6 @@ This project is a custom widget that integrates with the [Songify](https://githu
 
 - **Songify**: Ensure that Songify is installed and its integrated web server is turned on and properly configured. For more information on configuring the Songify web server, see the [Settings Window - Web Server](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server) section of the Songify wiki.
 
-## Installation
-
-### Step 1: Configure the Songify Web Server
-
-1. Open the Songify application.
-2. Go to the **Settings Window** and enable the **Web Server**.
-
-   For detailed instructions, please refer to the [Songify Web Server Settings](https://github.com/songify-rocks/Songify/wiki/Settings-Window#web-server).
-
 ## Installing and running
 
 To run the application, follow these steps:
